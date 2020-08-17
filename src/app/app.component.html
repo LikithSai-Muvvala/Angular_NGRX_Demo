@@ -1,0 +1,57 @@
+<h1> Employee Creation </h1>
+<table>
+  <tr>
+    <td>
+      First Name:
+    </td> 
+    <td>
+      <input type="text" [(ngModel)]="employee.firstName" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Last Name:
+    </td> 
+    <td>
+      <input type="text" [(ngModel)]="employee.lastName" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Salary:
+    </td> 
+    <td>
+      <input type="number" [(ngModel)]="employee.salary" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="submit" value="Submit" (click)="createEmployee()">
+    </td>
+  </tr>
+</table>
+
+<h1> Employee Table </h1>
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>FirstName</td>
+      <td>LastName</td>
+      <td>Salary</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empsList">
+      <td>{{emp.id}}</td>
+      <td>{{emp.firstName}}</td>
+      <td>{{emp.lastName}}</td>
+      <td>{{emp.salary}}</td>
+      <td>
+        <input type="button" value="Update" (click)="updateEmployee(emp)">
+        <input type="button" value="Delete" (click)="deleteEmployee(emp.id)">
+      </td>
+    </tr>
+  </tbody>
+</table>
